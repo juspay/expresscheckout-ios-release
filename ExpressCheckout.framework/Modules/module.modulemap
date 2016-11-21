@@ -1,0 +1,6 @@
+framework module ExpressCheckout {
+  umbrella header "ExpressCheckout.h"
+
+  export *
+  module * { export * }
+}
