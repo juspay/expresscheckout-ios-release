@@ -17,6 +17,11 @@ typedef void(^Callback)(id data, NSError *error);
 @property (nonatomic, strong) JuspaySafeBrowser *browser;
 @property (nonatomic) Boolean shouldLoadEndURL;
 @property Boolean shouldNotPopOnEndURL;
+@property (nonatomic) Boolean shouldNotPopAfterPayment;
+@property (nonatomic, strong) NSArray *cookies;
+@property (nonatomic, strong) UIView *customActivityIndicator;
+@property (nonatomic, strong) NSArray *confirmationAlertContents;
+
 
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray*)endUrlRegexes;
 
