@@ -42,6 +42,12 @@ typedef void(^Callback)(id data, NSError *error);
 //Saved Card Payment
 - (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID savedCardToken:(NSString *)token cardSecurityCode:(NSString*)securityCode endUrlRegexes:(NSArray *)endUrlRegexes;
 
+//Load url directly in browser 
+- (void)loadUrl:(NSString*)url merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray *)endUrlRegexes;
+
+//Tokenize Cards
+- (void)tokenizeEnvironment:(Environment)environment merchantId:(NSString *)merchantId cardNumber:(NSString *)number cardExpiryYear:(NSString*)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name callback:(JPBlock)block;
+
 - (void)startPaymentInView:(UIView*)view callback:(JPBlock)block;
 - (Environment)environmentEnumFromString:(NSString*)input;
 
