@@ -1,0 +1,30 @@
+{
+    "global": {
+        "experiments":
+        [
+         {
+             "name": "godel_flow_for_ios_users",
+             "type": "EXPERIMENT",
+             "enable_for": 0.1,
+             "sticky": true,
+             "ends_at": 1653523200000,
+             "proceed_after_expiry": false,
+             "has_ended": false
+         },
+         {
+             "name": "warn_customers_on_back_button",
+             "type": "EXPERIMENT",
+             "enable_for": 0.5,
+             "sticky": false,
+             "ends_at": 1511568000000,
+             "proceed_after_expiry": false,
+             "has_ended": false
+         }
+         ]
+    },
+    "overrides": {
+        "experiments":
+        [
+        ]
+    }
+}
