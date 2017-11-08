@@ -10,6 +10,7 @@
 #import <JuspaySafeBrowser/JuspaySafeBrowser.h>
 #import "Environments.h"
 #import "CardValidator.h"
+#import "AuthenticationType.h"
 
 typedef void(^Callback)(id data, NSError *error);
 
@@ -22,6 +23,10 @@ typedef void(^Callback)(id data, NSError *error);
 @property (nonatomic, strong) NSArray *cookies;
 @property (nonatomic, strong) UIView *customActivityIndicator;
 @property (nonatomic, strong) NSArray *confirmationAlertContents;
+
+- (id)initWithClientKey:(NSString *)clientKey environment:(Environment)environment;
+- (void)backButtonPressed;
+- (BOOL)isControllerAllowedToPop;
 
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray*)endUrlRegexes;
 
@@ -37,7 +42,7 @@ typedef void(^Callback)(id data, NSError *error);
 - (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID netbankingBank:(NSString *)bank  endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Card Payment
-- (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID cardNumber:(NSString *)number cardExpiryYear:(NSString*)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name saveToLocker:(Boolean)saveToLocker endUrlRegexes:(NSArray *)endUrlRegexes;
+- (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID cardNumber:(NSString *)number cardExpiryYear:(NSString*)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name authType:(CardAuthenticationType)authType saveToLocker:(Boolean)saveToLocker endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Saved Card Payment
 - (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID savedCardToken:(NSString *)token cardSecurityCode:(NSString*)securityCode endUrlRegexes:(NSArray *)endUrlRegexes;

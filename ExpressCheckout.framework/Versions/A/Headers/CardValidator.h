@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Environments.h"
 
 @interface CardValidator : NSObject
 + (NSDictionary*)validateNumber:(NSString*)number;
++ (NSDictionary *)getCardInfoForBIN:(NSString *)bin environment:(Environment)environment merchantId:(NSString *)merchantId checkAtmPinAuthSupport:(Boolean)check;
 @end
