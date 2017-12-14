@@ -12,7 +12,7 @@
 #import "CardValidator.h"
 #import "AuthenticationType.h"
 
-typedef void(^Callback)(id data, NSError *error);
+typedef void(^Callback)(id data, NSError * error);
 
 @interface ExpressCheckout : UIView
 
@@ -45,13 +45,13 @@ typedef void(^Callback)(id data, NSError *error);
 - (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID cardNumber:(NSString *)number cardExpiryYear:(NSString*)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name authType:(CardAuthenticationType)authType saveToLocker:(Boolean)saveToLocker endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Saved Card Payment
-- (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID savedCardToken:(NSString *)token cardSecurityCode:(NSString*)securityCode endUrlRegexes:(NSArray *)endUrlRegexes;
+- (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID savedCardToken:(NSString *)token cardSecurityCode:(NSString*)securityCode authType:(CardAuthenticationType)authType endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Load url directly in browser 
 - (void)loadUrl:(NSString*)url merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Tokenize Cards
-- (void)tokenizeEnvironment:(Environment)environment merchantId:(NSString *)merchantId cardNumber:(NSString *)number cardExpiryYear:(NSString*)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name callback:(JPBlock)block;
+- (void)tokenizeEnvironment:(Environment)environment merchantId:(NSString *)merchantId cardNumber:(NSString *)number cardExpiryYear:(NSString *)year cardExpiryMonth:(NSString*)month cardSecurityCode:(NSString*)securityCode nameOnCard:(NSString*)name callback:(JPBlock)block;
 
 //Tokenize Saved Cards
 - (void)tokenizeEnvironment:(Environment)environment merchantId:(NSString *)merchantId cardSecurityCode:(NSString*)securityCode storedCardToken:(NSString*)storedToken callback:(JPBlock)block;

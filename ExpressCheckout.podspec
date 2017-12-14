@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ExpressCheckout'
-  s.version          = '0.1.30'
+  s.version          = '0.1.31'
   s.summary          = 'Powerfull payment processing.'
 
 # This description is used to generate tags and improve search results.
@@ -123,7 +123,7 @@ Provides a powerfull payment processing capablities for your enterprize needs.
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "JuspaySafeBrowser","0.1.44"
+  s.dependency "JuspaySafeBrowser","0.1.45"
   s.ios.vendored_frameworks = "ExpressCheckout.framework"
   s.resource = 'ExpressCheckout.bundle'
 end
