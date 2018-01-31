@@ -27,6 +27,7 @@ typedef void(^Callback)(id data, NSError * error);
 - (id)initWithClientKey:(NSString *)clientKey environment:(Environment)environment;
 - (void)backButtonPressed;
 - (BOOL)isControllerAllowedToPop;
++ (void)performLogout;
 
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray*)endUrlRegexes;
 
