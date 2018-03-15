@@ -5,10 +5,10 @@
          {
              "name": "godel_flow_for_ios_users",
              "type": "EXPERIMENT",
-             "enable_for": 0.1,
+             "enable_for": 1.0,
              "sticky": true,
              "ends_at": 1653523200000,
-             "proceed_after_expiry": false,
+             "proceed_after_expiry": true,
              "has_ended": false
          },
          {
