@@ -29,12 +29,16 @@ typedef void(^Callback)(id data, NSError * error);
 - (BOOL)isControllerAllowedToPop;
 + (void)performLogout;
 
-- (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray*)endUrlRegexes;
+- (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID endUrlRegexes:(NSArray*)endUrlRegexes;
+
+- (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray*)endUrlRegexes customParameters:(NSDictionary<NSString*,NSString*> *)parameters;
 
 - (void)getMerchantPaymentConfigEnvironment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId callback:(Callback)callback;
 
 //Iframe based Payment
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID instrumentOptions:(NSArray*)intrumentOptions endUrlRegexes:(NSArray*)endUrlRegexes;
+
+- (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID instrumentOptions:(NSArray*)intrumentOptions endUrlRegexes:(NSArray*)endUrlRegexes customParameters:(NSDictionary<NSString*,NSString*> *)parameters;
 
 //Wallet Payment
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID wallet:(NSString*)wallet endUrlRegexes:(NSArray*)endUrlRegexes;
