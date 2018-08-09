@@ -36,6 +36,7 @@ typedef void(^Callback)(id data, NSError * error);
 - (void)getMerchantPaymentConfigEnvironment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderId callback:(Callback)callback;
 
 //Iframe based Payment
+
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID instrumentOptions:(NSArray*)intrumentOptions endUrlRegexes:(NSArray*)endUrlRegexes;
 
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID instrumentOptions:(NSArray*)intrumentOptions endUrlRegexes:(NSArray*)endUrlRegexes customParameters:(NSDictionary<NSString*,NSString*> *)parameters;
@@ -51,6 +52,9 @@ typedef void(^Callback)(id data, NSError * error);
 
 //Saved Card Payment
 - (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID savedCardToken:(NSString *)token cardSecurityCode:(NSString*)securityCode authType:(CardAuthenticationType)authType endUrlRegexes:(NSArray *)endUrlRegexes;
+
+//UPI Payment
+- (void)environment:(Environment)environment merchantId:(NSString *)merchantId orderId:(NSString *)orderID upiVpa:(NSString *)upiVpa redirectAfterPayment:(Boolean)redirect endUrlRegexes:(NSArray *)endUrlRegexes;
 
 //Load url directly in browser 
 - (void)loadUrl:(NSString*)url merchantId:(NSString*)merchantId orderId:(NSString*)orderId endUrlRegexes:(NSArray *)endUrlRegexes;
