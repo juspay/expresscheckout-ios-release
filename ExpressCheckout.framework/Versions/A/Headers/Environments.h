@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef enum{
+typedef enum {
     PRODUCTION,
     SANDBOX
-}Environment;
+} Environment;
 
 @interface Environments : NSObject
 

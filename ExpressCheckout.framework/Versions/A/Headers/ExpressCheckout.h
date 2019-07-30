@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <JuspaySafeBrowser/JuspaySafeBrowser.h>
-#import "Environments.h"
 #import "CardValidator.h"
-#import "AuthenticationType.h"
+
+typedef enum {
+    DEFAULT_AUTHENTICATION,
+    ATMPIN_AUTHENTICATION
+} CardAuthenticationType;
 
 typedef void(^Callback)(id data, NSError * error);
 
@@ -18,15 +21,17 @@ typedef void(^Callback)(id data, NSError * error);
 
 @property (nonatomic, strong) JuspaySafeBrowser *browser;
 @property (nonatomic) Boolean shouldLoadEndURL;
-@property Boolean shouldNotPopOnEndURL;
+@property (nonatomic) Boolean shouldNotPopOnEndURL;
 @property (nonatomic) Boolean shouldNotPopAfterPayment;
 @property (nonatomic, strong) NSArray *cookies;
 @property (nonatomic, strong) UIView *customActivityIndicator;
 @property (nonatomic, strong) NSArray *confirmationAlertContents;
 
-- (id)initWithClientKey:(NSString *)clientKey environment:(Environment)environment;
+- (id)initWithClientKey:(NSString *)clientKey environment:(Environment)environment __attribute__ ((deprecated));
+
 - (void)backButtonPressed;
 - (BOOL)isControllerAllowedToPop;
+
 + (void)performLogout;
 
 - (void)environment:(Environment)environment merchantId:(NSString*)merchantId orderId:(NSString*)orderID endUrlRegexes:(NSArray*)endUrlRegexes;
